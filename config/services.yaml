@@ -25,3 +25,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Service\Parser\MicroDvdParser:
+        tags: ['subtitle.parser']
+
+    App\Service\Parser\SubRipParser:
+        tags: ['subtitle.parser']
+
+    App\Service\Parser\ParserFactory:
+        class: App\Service\Parser\ParserFactory
+        arguments: [!tagged subtitle.parser]
+
+    App\Service\StatsCalculator:
+        public: true;

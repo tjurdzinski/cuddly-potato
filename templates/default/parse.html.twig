@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Subtitle stats {{ filename }}</h1>
+
+    <table border="1">
+        <tr>
+            <th>Word</th>
+            <th>Occurrence count</th>
+        </tr>
+        {% for word, count in stats %}
+            <tr>
+                <td>{{ word }}</td>
+                <td>{{ count }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
