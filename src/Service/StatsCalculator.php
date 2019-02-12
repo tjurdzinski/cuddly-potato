@@ -38,6 +38,11 @@ class StatsCalculator
 
         $stats = new StatsDTO();
 
+        /**
+         * Why is StatsDTO passed to the parser?
+         * We need to see the whole file in a loop, 
+         * so as not to create another loop for making statistics, we collect them line by line in one loop.
+         */
         $parser->parse($filePath, $stats);
 
         if ($this->workOnCopy) {
