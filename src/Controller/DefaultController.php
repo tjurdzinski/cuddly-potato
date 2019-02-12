@@ -18,9 +18,7 @@ class DefaultController extends Controller
      */
     public function index()
     {
-        return [
-            'path' => 'src/Controller/DefaultController.php',
-        ];
+        return [];
     }
 
     /**
